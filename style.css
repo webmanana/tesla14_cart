@@ -13,15 +13,30 @@ body {
 	line-height: 28px;
 	color: #000;
 }
-.cart_inner {
-}
 .cart_form {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
 }
+.cart_pay {
+	padding-top: 15px;
+}
+.cart_line {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    right: -30px;
+    height: 1px;
+    content: '';
+    background-color: #ddd;
+}
+.cart_block3 .cart_block3_1 {
+	padding-bottom: 10px;
+}
 .cart_form_block {
-	padding: 20px;
+	position: relative;
+	padding: 20px 30px;
 	border-top: 1px solid #ddd;
 	border-left: 1px solid #ddd;
 	border-right: 1px solid #ddd;
