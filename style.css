@@ -45,7 +45,7 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 0;
 }
 .cart_req {
     color: red;
@@ -160,6 +160,7 @@ body {
     z-index: 5;
     transition: border .25s linear;
     -webkit-transition: border .25s linear;
+	cursor: pointer;
 }
 .tabs-title.is-active .check:before {
     display: block;
