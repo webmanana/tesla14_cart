@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Оформление заказы</title>
+		<link rel="stylesheet" href="foundation/css/foundation.min.css" />
+		<link href="https://cdn.jsdelivr.net/npm/suggestions-jquery@18.8.0/dist/css/suggestions.min.css" type="text/css" rel="stylesheet" />
+
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="wrap">
+			<h1>Оформление заказа</h1>
+			<div class="cart_inner">
+				<form class="cart_form" action="index.html" method="post">
+					<div class="cart_form_block">
+						<h3>Контактная информация</h3>
+						<ul class="tabs" data-tabs id="product-tabs">
+							<li class="tabs-title check_1 is-active">
+								<a data-tabs-target="panel2" href="#panel2">Физическое лицо</a>
+								<div class="check"></div>
+							</li>
+							<li class="tabs-title check_2">
+								<a data-tabs-target="panel3" href="#panel3">Юридическре лицо</a>
+								<div class="check"></div>
+							</li>
+						</ul>
+						<div class="tabs-content" data-tabs-content="product-tabs">
+							<!-- первый таб -->
+							<div class="tabs-panel is-active" id="panel2">
+								<div class="cart_block2">
+									<span>Контактное лицо <div class="cart_req">*</div></span>
+
+									<input type="text" name="name" value="" placeholder="Пример: Иванов Иван Иванович">
+								</div>
+								<div class="cart_block3">
+									<div class="cart_block3_1">
+										<span>Телефон <div class="cart_req">*</div></span>
+										<input type="text" name="phone" value="" placeholder="+7">
+									</div>
+									<div class="cart_block3_1">
+										<span>Email адрес <div class="cart_req">*</div></span>
+										<input type="text" name="mail" value="" placeholder="Пример: ivan@mail.ru">
+									</div>
+								</div>
+								<div class="cart_pay">
+									<h3>Оплата</h3>
+									<div class="cart_pay_inner">
+										<div class="cart_block4_1">
+											<input type="radio" id="cart_check1" name="pay_method1" value="pay_method1" checked>
+											<label for="cart_check1">
+												<span class="cart_check1_1">Оплата наличными или картой</span>
+												<span class="cart_check1_2">Оплата наличными или картой при получении заказа в пункте самовывоза</span>
+											</label>
+											<div class="check"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- второй таб -->
+							<div class="tabs-panel" id="panel3">
+								<div class="cart_block2">
+									<span>ИНН организации <div class="cart_req">*</div></span>
+									<input id="party" name="party" type="text" size="100" placeholder="Пример: 1435157457"/>
+								</div>
+								<div class="cart_block3">
+									<div class="cart_block3_1">
+										<span>Контактное лицо <div class="cart_req">*</div></span>
+										<input type="text" name="name" value="" placeholder="Пример: Иванов Иван Иванович">
+									</div>
+									<div class="cart_block3_1">
+										<span>Телефон <div class="cart_req">*</div></span>
+										<input type="text" name="phone" value="" placeholder="+7">
+									</div>
+									<div class="cart_block3_1">
+										<span>Email адрес <div class="cart_req">*</div></span>
+										<input type="text" name="mail" value="" placeholder="Пример: ivan@mail.ru">
+									</div>
+								</div>
+								<div class="cart_pay">
+									<h3>Оплата</h3>
+									<div class="cart_pay_inner">
+										<div class="cart_block4_1">
+											<input type="radio" id="cart_check2" name="pay_method2" value="pay_method2" checked>
+											<label for="cart_check2">
+												<span class="cart_check1_1">Счет на эл. почту</span>
+												<span class="cart_check1_2">Оплата наличными или картой при получении заказа</span>
+											</label>
+											<div class="check"></div>
+										</div>
+										<div class="cart_block4_1">
+											<input type="radio" id="cart_check3" name="pay_method2" value="pay_method3">
+											<label for="cart_check3">
+												<span class="cart_check1_1">Наличными в магазине</span>
+												<span class="cart_check1_2">Оплата наличными или картой при получении заказа</span>
+											</label>
+											<div class="check"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="cart_total">
+						<div class="cart_total_price">
+							<span>Итого</span>
+							<span class="cart_total_price1">1 500 ₽</span>
+						</div>
+						<div class="cart_total_button">
+							<input type="submit" name="" value="Оформить заказ">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<script src="vendor/jquery.min.js"></script>
+		<script src="foundation/js/vendor/what-input.js"></script>
+		<script src="foundation/js/vendor/foundation.min.js"></script>
+		<script>
+			$(document).foundation();
+		</script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<!--[if lt IE 10]>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.1/jquery.xdomainrequest.min.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/suggestions-jquery@18.8.0/dist/js/jquery.suggestions.min.js"></script>
+		<script type="text/javascript">
+		    $("#party").suggestions({
+		        token: "${API_KEY}",
+		        type: "PARTY",
+		        count: 5,
+		        /* Вызывается, когда пользователь выбирает одну из подсказок */
+		        onSelect: function(suggestion) {
+		            console.log(suggestion);
+		        }
+		    });
+		</script>
+	</body>
+</html>
