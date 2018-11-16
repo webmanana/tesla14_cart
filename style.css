@@ -276,6 +276,9 @@ body {
 .cart_block2 span {
     padding-bottom: 2px;
 }
+.suggestions-value[data-suggestion-status=LIQUIDATED]:after {
+	display: none;
+}
 @media screen and (max-width: 768px) {
 	.cart_block3_1 {
 	    width: 100%;
